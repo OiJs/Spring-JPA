@@ -23,3 +23,27 @@ Content-Type: application/json
 {
   "password": "hahaha"
 }
+
+### Create user(id = user)
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "id": "user",
+  "password": "1234",
+  "age" : 26
+}
+
+### Get user(id = user)
+GET http://localhost:8080/users/user
+
+### Modify user(id = user)
+PUT http://localhost:8080/users/user
+Content-Type: application/json
+
+{
+  "password": "hahaha",
+  "age" : 29
+}
+
+
