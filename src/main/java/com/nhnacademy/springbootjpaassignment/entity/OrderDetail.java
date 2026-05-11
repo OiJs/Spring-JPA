@@ -1,6 +1,5 @@
-package com.nhnacademy.springbootjpaassignment.order.entity;
+package com.nhnacademy.springbootjpaassignment.entity;
 
-import com.nhnacademy.springbootjpaassignment.product.entity.Product;
 import jakarta.persistence.*;
 import lombok.*;
 

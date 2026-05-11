@@ -1,6 +1,5 @@
-package com.nhnacademy.springbootjpaassignment.order.entity;
+package com.nhnacademy.springbootjpaassignment.entity;
 
-import com.nhnacademy.springbootjpaassignment.user.entity.User;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import lombok.*;
@@ -24,7 +23,7 @@ public class Order {
 
     @Column(name = "order_status", length = 50)
     @Enumerated(EnumType.STRING)
-    private String orderStatus;
+    private OrderStatus orderStatus;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")

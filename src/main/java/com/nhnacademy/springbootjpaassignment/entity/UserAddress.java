@@ -1,4 +1,4 @@
-package com.nhnacademy.springbootjpaassignment.user.entity;
+package com.nhnacademy.springbootjpaassignment.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

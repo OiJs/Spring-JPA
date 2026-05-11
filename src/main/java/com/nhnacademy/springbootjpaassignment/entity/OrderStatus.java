@@ -1,4 +1,4 @@
-package com.nhnacademy.springbootjpaassignment.order.entity;
+package com.nhnacademy.springbootjpaassignment.entity;
 
 import lombok.Getter;
 
