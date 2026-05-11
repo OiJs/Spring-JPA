@@ -1,5 +1,17 @@
 package com.nhnacademy.springbootjpa.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
+
 // TODO #1: `item` 테이블과 매핑될 `Item` Entity 클래스를 작성하세요.
 /*
  * create table item
@@ -10,16 +22,19 @@ package com.nhnacademy.springbootjpa.entity;
  *     price bigint      not null
  * );
  */
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Entity
+@Table(name = "item")
 public class Item {
-    public long getId() {
-        return 0;
-    }
-
-    public String getName() {
-        return null;
-    }
-
-    public long getPrice() {
-        return 0;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Length(max = 40)
+    @NotNull
+    private String name;
+    @NotNull
+    @Min(0)
+    private Long price;
 }
