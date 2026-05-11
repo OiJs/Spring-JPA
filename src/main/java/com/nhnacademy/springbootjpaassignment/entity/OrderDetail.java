@@ -13,7 +13,7 @@ public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "detail_id")
-    private Integer detailId;
+    private Long detailId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id") 

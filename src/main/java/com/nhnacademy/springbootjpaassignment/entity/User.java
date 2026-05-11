@@ -16,7 +16,7 @@ public class User {
     }
     @Id
     @Column(name = "user_id", length = 50)
-    private String userId;
+    private Long userId;
 
     @Column(name = "user_name", nullable = false, length = 50)
     private String userName;
