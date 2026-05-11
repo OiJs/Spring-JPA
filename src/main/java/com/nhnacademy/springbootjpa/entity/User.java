@@ -2,6 +2,7 @@ package com.nhnacademy.springbootjpa.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
@@ -19,4 +20,8 @@ public class User {
     @NotNull
     @Setter
     private String password;
+
+    @Min(0)
+    @Setter
+    private int age;
 }
