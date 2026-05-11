@@ -1,7 +1,8 @@
-package com.nhnacademy.springbootjpaassignment.order.domain;
+package com.nhnacademy.springbootjpaassignment.order.entity;
 
-import com.nhnacademy.springbootjpaassignment.user.domain.User;
+import com.nhnacademy.springbootjpaassignment.user.entity.User;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
@@ -22,6 +23,7 @@ public class Order {
     private String orderNumber;
 
     @Column(name = "order_status", length = 50)
+    @Enumerated(EnumType.STRING)
     private String orderStatus;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -32,6 +34,7 @@ public class Order {
     private Integer totalAmount;
 
     @Column(name = "saved_point", nullable = false)
+    @Min(0)
     private Integer savedPoint;
 
     @CreationTimestamp

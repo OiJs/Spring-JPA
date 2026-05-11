@@ -1,6 +1,6 @@
-package com.nhnacademy.springbootjpaassignment.cart.domain;
+package com.nhnacademy.springbootjpaassignment.cart.entity;
 
-import com.nhnacademy.springbootjpaassignment.product.domain.Product;
+import com.nhnacademy.springbootjpaassignment.product.entity.Product;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;

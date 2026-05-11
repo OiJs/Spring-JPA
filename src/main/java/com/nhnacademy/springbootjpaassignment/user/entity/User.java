@@ -1,4 +1,4 @@
-package com.nhnacademy.springbootjpaassignment.user.domain;
+package com.nhnacademy.springbootjpaassignment.user.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,7 +11,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
-
+    public enum Auth{
+        ROLE_ADMIN,ROLE_USER
+    }
     @Id
     @Column(name = "user_id", length = 50)
     private String userId;

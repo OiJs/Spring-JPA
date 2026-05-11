@@ -1,4 +1,4 @@
-package com.nhnacademy.springbootjpaassignment.product.domain;
+package com.nhnacademy.springbootjpaassignment.product.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,4 +1,4 @@
-package com.nhnacademy.springbootjpaassignment.cart.domain;
+package com.nhnacademy.springbootjpaassignment.cart.entity;
 
 import jakarta.persistence.*;
 import java.util.ArrayList;

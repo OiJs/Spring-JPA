@@ -1,6 +1,5 @@
-package com.nhnacademy.springbootjpaassignment.point.domain;
+package com.nhnacademy.springbootjpaassignment.point.entity;
 
-import com.nhnacademy.springbootjpaassignment.user.domain.User;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
