@@ -1,0 +1,40 @@
+package com.nhnacademy.springbootjpaassignment.order.domain;
+
+import com.nhnacademy.springbootjpaassignment.user.domain.User;
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "Orders")
+@Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Order {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_id")
+    private Integer orderId;
+
+    @Column(name = "order_number", nullable = false, unique = true, length = 50)
+    private String orderNumber;
+
+    @Column(name = "order_status", length = 50)
+    private String orderStatus;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @Column(name = "total_amount", nullable = false)
+    private Integer totalAmount;
+
+    @Column(name = "saved_point", nullable = false)
+    private Integer savedPoint;
+
+    @CreationTimestamp
+    @Column(name = "ordered_at", updatable = false)
+    private LocalDateTime orderedAt;
+}
