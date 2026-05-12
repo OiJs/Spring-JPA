@@ -23,7 +23,7 @@ class OneToOneTest {
 
     @Test
     void test() {
-        Locker locker = new Locker(1L, "No.1 Locker");
+        Locker locker = new Locker(1L, "No.1 Locker", null);
         lockerRepository.save(locker);
 
         Member member = new Member(1L, "academy", locker);
