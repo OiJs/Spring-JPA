@@ -52,7 +52,7 @@ class ItemRepositoryTest {
 
         // when
         // TODO: #2-1 itemRepository 에 생성한 메서드를 위의 prices 매개변수를 줘서 호출하세요.
-        List<Item> items = null;
+        List<Item> items = itemRepository.findAllByPriceIn(prices);
 
         // then
         assertThat(items).hasSize(3);
