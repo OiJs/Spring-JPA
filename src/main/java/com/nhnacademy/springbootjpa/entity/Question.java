@@ -1,6 +1,15 @@
 package com.nhnacademy.springbootjpa.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import java.time.ZonedDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
 // TODO #1: `question` 테이블과 매핑될 `Question` Entity 클래스를 작성하세요.
 /*
@@ -13,20 +22,27 @@ import java.time.ZonedDateTime;
  *     created_at datetime     not null
  * );
  */
+@Getter
+@NoArgsConstructor
+@Entity
 public class Question {
-    public long getId() {
-        return 0;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public String getTitle() {
-        return null;
-    }
+    @Column(name = "title", length = 100, nullable = false)
+    private String title;
 
-    public String getContent() {
-        return null;
-    }
+    @Column(name = "content", nullable = false, columnDefinition = "TEXT")
+    private String content;
 
-    public ZonedDateTime getCreatedAt() {
-        return null;
+    @Column(name = "created_at", nullable = false)
+    @CreatedDate
+    private ZonedDateTime createdAt;
+
+    public Question(String title, String content, ZonedDateTime createdAt) {
+        this.title = title;
+        this.content = content;
+        this.createdAt = createdAt;
     }
 }
