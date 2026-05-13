@@ -2,6 +2,9 @@ package com.nhnacademy.springbootjpa.entity;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -13,12 +16,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class OrderItem {
-    @EmbeddedId
-    private OrderItemPk pk;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    // TODO #1: 다대일 관계 설정
+    private int lineNumber;
+
+    private int quantity;
+
     @ManyToOne(optional = false)
     private Item item;
 
-    private int quantity;
+    @ManyToOne
+    private Order order;
 }
