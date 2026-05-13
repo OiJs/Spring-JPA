@@ -2,7 +2,7 @@ spring:
   application:
     name: NHN Academy - Spring Boot JPA
   jpa:
-    open-in-view: false
+    open-in-view: true
     show-sql: true
     properties:
       hibernate:
