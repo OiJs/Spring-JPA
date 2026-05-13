@@ -12,12 +12,12 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
+@Sql("order-item-test.sql")
 class OrderRepositoryTest {
 
     @Autowired
     private OrderRepository orderRepository;
 
-    @Sql("order-test.sql")
     @Test
     void findOrderTest() {
         // given
